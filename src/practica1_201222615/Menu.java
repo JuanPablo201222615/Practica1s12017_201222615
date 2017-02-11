@@ -1,11 +1,17 @@
 package practica1_201222615;
-import java.awt.List;
+import java.util.List;
 import java.io.File;
-import static javax.management.Query.lt;
+import java.io.IOException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import org.jdom2.Document;         // |
 import org.jdom2.Element;          // |\ Librerías
 import org.jdom2.JDOMException;    // |/ JDOM
 import org.jdom2.input.SAXBuilder;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 /**
  *
  * @author jp_gm
@@ -17,6 +23,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -98,74 +105,21 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLeerArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerArchivoActionPerformed
-        // TODO add your handling code here:
-        btnJugar.setEnabled(true);
+
+
     }//GEN-LAST:event_btnLeerArchivoActionPerformed
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
         // TODO add your handling code here:        
     }//GEN-LAST:event_btnJugarActionPerformed
-public void cargarXml()
-{
-    //Se crea un SAXBuilder para poder parsear el archivo
-    SAXBuilder builder = new SAXBuilder();
-    File xmlFile = new File( "archivo.xml" );
-    try
-    {
-        //Se crea el documento a traves del archivo
-        Document document = (Document) builder.build( xmlFile );
- 
-        //Se obtiene la raiz 'tables'
-        Element rootNode = document.getRootElement();
- 
-        //Se obtiene la lista de hijos de la raiz 'tables'
-        List list = rootNode.getChildren( "tabla" );
- 
-        //Se recorre la lista de hijos de 'tables'
-        for ( int i = 0; i &lt; list.size(); i++ )
-        {
-            //Se obtiene el elemento 'tabla'
-            Element tabla = (Element) list.get(i);
- 
-            //Se obtiene el atributo 'nombre' que esta en el tag 'tabla'
-            String nombreTabla = tabla.getAttributeValue("nombre");
- 
-            System.out.println( "Tabla: " + nombreTabla );
- 
-            //Se obtiene la lista de hijos del tag 'tabla'
-            List lista_campos = tabla.getChildren();
- 
-            System.out.println( "\tNombre\t\tTipo\t\tValor" );
- 
-            //Se recorre la lista de campos
-            for ( int j = 0; j &lt; lista_campos.size(); j++ )
-            {
-                //Se obtiene el elemento 'campo'
-                Element campo = (Element)lista_campos.get( j );
-         
-                //Se obtienen los valores que estan entre los tags '&lt;campo&gt;&lt;/campo&gt;'
-                //Se obtiene el valor que esta entre los tags '&lt;nombre&gt;&lt;/nombre&gt;'
-                String nombre = campo.getChildTextTrim("nombre");
- 
-                //Se obtiene el valor que esta entre los tags '&lt;tipo&gt;&lt;/tipo&gt;'
-                String tipo = campo.getChildTextTrim("tipo");
- 
-                //Se obtiene el valor que esta entre los tags '&lt;valor&gt;&lt;/valor&gt;'
-                String valor = campo.getChildTextTrim("valor");
- 
-                System.out.println( "\t"+nombre+"\t\t"+tipo+"\t\t"+valor);
-            }
-        }
-    }catch ( IOException io ) {
-        System.out.println( io.getMessage() );
-    }catch ( JDOMException jdomex ) {
-        System.out.println( jdomex.getMessage() );
-    }
-}
-    /**
+
+
+ /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
