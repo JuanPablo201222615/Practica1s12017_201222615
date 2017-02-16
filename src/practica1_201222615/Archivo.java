@@ -10,9 +10,9 @@ package practica1_201222615;
  * @author jp_gm
  */
 public class Archivo {
-   private double dimension;
-   private double valorX;
-   private double valorY;
+   private String dimension;
+   private String valorX;
+   private String valorY;
    private String palabra;
 
     public Archivo() {
@@ -23,27 +23,27 @@ public class Archivo {
         
     }
 /////////////////////////////////////////////Getters y Setters/////////////////////////////////////////////////////
-    public double getDimension() {
+    public String getDimension() {
         return dimension;
     }
 
-    public void setDimension(double dimension) {
+    public void setDimension(String dimension) {
         this.dimension = dimension;
     }
 
-    public double getValorX() {
+    public String getValorX() {
         return valorX;
     }
 
-    public void setValorX(double valorX) {
+    public void setValorX(String valorX) {
         this.valorX = valorX;
     }
 
-    public double getValorY() {
+    public String getValorY() {
         return valorY;
     }
 
-    public void setValorY(double valorY) {
+    public void setValorY(String valorY) {
         this.valorY = valorY;
     }
 

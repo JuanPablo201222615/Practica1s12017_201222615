@@ -1,38 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scrabble>
-<dimension>20</dimension>
-<dobles>
-<casilla>
-<x>2</x>
-<y>5</y>
-</casilla>
-<casilla>
-<x>7</x>
-<y>9</y>
-</casilla>
-</dobles>
-<triples>
-<casilla>
-<x>20</x>
-<y>20</y>
-</casilla>
-<casilla>
-<x>1</x>
-<y>1</y>
-</casilla>
-</triples>
-<diccionario>
-<palabra>hola</palabra>
-<palabra>mundo</palabra>
-<palabra>como</palabra>
-<palabra>estas</palabra>
-<palabra>uno</palabra>
-<palabra>dos</palabra>
-<palabra>tres</palabra>
-<palabra>universidad</palabra>
-<palabra>practica</palabra>
-<palabra>primera</palabra>
-<palabra>correo</palabra>
-<palabra>juego</palabra>
-</diccionario>
-</scrabble>
+<company>
+    <staff id="1001">
+        <firstname>yong</firstname>
+        <lastname>mook kim</lastname>
+        <nickname>mkyong</nickname>
+        <salary>100000</salary>
+    </staff>
+    <staff id="2001">
+        <firstname>low</firstname>
+        <lastname>yin fong</lastname>
+        <nickname>fong fong</nickname>
+        <salary>200000</salary>
+    </staff>
+</company>

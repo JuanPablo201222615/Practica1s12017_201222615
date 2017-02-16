@@ -2,6 +2,8 @@ package practica1_201222615;
 import java.util.List;
 import java.io.File;
 import java.io.IOException;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.SAXParser;
@@ -98,19 +100,63 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLeerArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerArchivoActionPerformed
+    try {
+     	JFileChooser chooser = new JFileChooser();
+    	chooser.showOpenDialog(new JFrame());
+    	File fXmlFile=chooser.getSelectedFile();
 
+    
+    
+    DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+    DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+    org.w3c.dom.Document doc = dBuilder.parse(fXmlFile);
+    doc.getDocumentElement().normalize();
+
+    System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+
+    NodeList nList = doc.getElementsByTagName("scrabble");
+
+    System.out.println("----------------------------");
+
+    for (int temp = 0; temp < nList.getLength(); temp++) {
+
+        Node nNode = nList.item(temp);
+
+        System.out.println("\nCurrent Element :" + nNode.getNodeName());
+
+        if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+            org.w3c.dom.Element eElement = (org.w3c.dom.Element) nNode;
+
+            System.out.println("Dobles: Valor X y Y : " + eElement.getElementsByTagName("dobles").item(0).getTextContent());
+            System.out.println("Triles: Valor X y Y : " + eElement.getElementsByTagName("triples").item(0).getTextContent());
+            System.out.println("Diccionario : " + eElement.getElementsByTagName("diccionario").item(0).getTextContent());
+
+        }
+    }
+    
+   
+    } catch (Exception e) {
+    e.printStackTrace();
+    }
+    
+    btnJugar.setEnabled(true);
 
     }//GEN-LAST:event_btnLeerArchivoActionPerformed
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-        // TODO add your handling code here:        
+        Menu menu = new Menu();
+        menu.setVisible(false);
+        Juego frm = new Juego();
+       
+       frm.setVisible(true);
     }//GEN-LAST:event_btnJugarActionPerformed
 
 

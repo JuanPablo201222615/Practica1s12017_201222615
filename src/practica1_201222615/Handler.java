@@ -35,13 +35,13 @@ private StringBuilder buffer = new StringBuilder();
      switch(qName)
    {
        case "dimension":
-          archivo.setDimension(Double.parseDouble(buffer.toString()));
+          archivo.setDimension(buffer.toString());
            break;
        case "x":
-           archivo.setValorX(Double.parseDouble(buffer.toString()));
+           archivo.setValorX(buffer.toString());
            break;
        case "y":
-           archivo.setValorY(Double.parseDouble(buffer.toString()));
+           archivo.setValorY(buffer.toString());
            break;
        case "palabra":
            archivo.setPalabra(buffer.toString());
