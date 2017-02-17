@@ -5,6 +5,8 @@
  */
 package practica1_201222615;
 
+import static java.awt.JobAttributes.DestinationType.FILE;
+
 /**
  *
  * @author jp_gm
@@ -40,13 +42,39 @@ public class ListaSimple_FichasJugador {
     
     public void graficarLista ()
     {
-        NodoListaSimple_FichasJugador actual = new NodoListaSimple_FichasJugador();
+        /*NodoListaSimple_FichasJugador actual = new NodoListaSimple_FichasJugador();
         actual = primero;
         while(actual != null)
         {
         System.out.println(actual.ficha);
         actual = actual.siguiente;
-        }
+        }*/
+        
+    try {
+      
+      String dotPath = "C:\\Users\\jp_gm\\Downloads\\graphviz-2.38\\release\\bin\\dot.exe";
+      
+      String fileInputPath = "C:\\Users\\jp_gm\\Desktop\\grafo1.txt";
+      String fileOutputPath = "C:\\Users\\jp_gm\\Desktop\\grafo1.jpg";
+      
+      String tParam = "-Tjpg";
+      String tOParam = "-o";
+        
+      String[] cmd = new String[5];
+      cmd[0] = dotPath;
+      cmd[1] = tParam;
+      cmd[2] = fileInputPath;
+      cmd[3] = tOParam;
+      cmd[4] = fileOutputPath;
+                  
+      Runtime rt = Runtime.getRuntime();
+      
+      rt.exec( cmd );
+      
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    } finally {
+    }
     }
     
     
@@ -54,3 +82,6 @@ public class ListaSimple_FichasJugador {
     
     
 }
+
+
+

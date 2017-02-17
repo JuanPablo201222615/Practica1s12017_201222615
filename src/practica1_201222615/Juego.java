@@ -84,13 +84,22 @@ public class Juego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  ListaSimple_Palabras l = new ListaSimple_Palabras();
+  /*ListaSimple_Palabras l = new ListaSimple_Palabras();
 l.ingresarNodo("L");
 l.ingresarNodo("U");
 l.ingresarNodo("D");
 l.ingresarNodo("I");
 l.ingresarNodo("C");
 l.ingresarNodo("A");
+l.graficarLista();*/
+        
+          ListaCircular_Usuarios l = new ListaCircular_Usuarios ();
+l.IngresarUsuario("L");
+l.IngresarUsuario("U");
+l.IngresarUsuario("D");
+l.IngresarUsuario("I");
+l.IngresarUsuario("C");
+l.IngresarUsuario("A");
 l.graficarLista();
     }//GEN-LAST:event_jButton1ActionPerformed
 
