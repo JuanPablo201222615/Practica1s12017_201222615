@@ -9,10 +9,11 @@ package practica1_201222615;
  *
  * @author jp_gm
  */
-public class nodoListaSimple {
+public class NodoListaSimple_Palabras {
     String dato;
-    nodoListaSimple siguiente;
+    NodoListaSimple_Palabras siguiente;
     
     
     
 }
+

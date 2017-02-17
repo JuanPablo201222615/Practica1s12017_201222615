@@ -9,10 +9,10 @@ package practica1_201222615;
  *
  * @author jp_gm
  */
-public class listaSimple {
-    nodoListaSimple primero;
-    nodoListaSimple ultimo;
-    public listaSimple ()
+public class ListaSimple_Palabras {
+    NodoListaSimple_Palabras primero;
+    NodoListaSimple_Palabras ultimo;
+    public ListaSimple_Palabras ()
     {
         primero = null;//esto nos dice que cuando no exista nada en la lista el puntero de tipo nodoListaSimple no a apuntar a nada.
         ultimo = null;//esto nos dice que cuando no exista nada en la lista el puntero de tipo nodoListaSimple no a apuntar a nada.
@@ -21,7 +21,7 @@ public class listaSimple {
     
     public void ingresarNodo(String palabra)
     {
-    nodoListaSimple nodoNuevo = new nodoListaSimple();
+    NodoListaSimple_Palabras nodoNuevo = new NodoListaSimple_Palabras();
     nodoNuevo.dato = palabra;
     if (primero == null)//el nodoNuevo que estamos ingresando va a ser nuestra cabezera ya que no hay ningun otro nodo existente
     {
@@ -38,7 +38,7 @@ public class listaSimple {
     
     public void graficarLista ()
     {
-        nodoListaSimple actual = new nodoListaSimple();
+        NodoListaSimple_Palabras actual = new NodoListaSimple_Palabras();
         actual = primero;
         while(actual != null)
         {
