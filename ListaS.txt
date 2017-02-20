@@ -1,0 +1,8 @@
+digraph{
+rankdir = LR;
+node [shape=record,color=lightblue];     subgraph clusterListaSimple1 {
+label = "LISTA SIMPLE ENLAZADA DE PALABRAS ";
+color=lightgrey;
+;
+}
+}

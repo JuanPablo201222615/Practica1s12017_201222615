@@ -84,16 +84,17 @@ public class Juego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  /*ListaSimple_Palabras l = new ListaSimple_Palabras();
-l.ingresarNodo("L");
-l.ingresarNodo("U");
-l.ingresarNodo("D");
+ /* ListaSimple_Palabras l = new ListaSimple_Palabras();
+l.ingresarNodo("O");
+l.ingresarNodo("R");
+l.ingresarNodo("I");
 l.ingresarNodo("I");
 l.ingresarNodo("C");
 l.ingresarNodo("A");
-l.graficarLista();*/
+l.graficarLista();
+l.MostrarLista();*/
         
-          ListaCircular_Usuarios l = new ListaCircular_Usuarios ();
+         /*ListaCircular_Usuarios l = new ListaCircular_Usuarios ();
 l.IngresarUsuario("L");
 l.IngresarUsuario("U");
 l.IngresarUsuario("D");
@@ -101,6 +102,24 @@ l.IngresarUsuario("I");
 l.IngresarUsuario("C");
 l.IngresarUsuario("A");
 l.graficarLista();
+l.MostrarLista();*/
+
+        Cola l = new Cola ();
+l.ingresarNodo(1);
+l.ingresarNodo(2);
+l.ingresarNodo(3);
+l.ingresarNodo(4);
+l.eliminar();
+l.graficarLista();
+l.MostrarLista();
+
+/*ListaSimple_FichasJugador l1 = new ListaSimple_FichasJugador();
+l1.ingresarNodo(1);
+l1.ingresarNodo(2);
+l1.ingresarNodo(3);
+l1.ingresarNodo(4);
+l1.graficarLista();
+l1.MostrarLista();*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

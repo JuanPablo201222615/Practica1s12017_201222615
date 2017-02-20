@@ -9,8 +9,8 @@ package practica1_201222615;
  *
  * @author jp_gm
  */
-public class NodoListaCircular_Usuarios {
-   String usuario;
-   NodoListaCircular_Usuarios siguiente;
-   NodoListaSimple_FichasJugador union;
+public class NodoCola {
+    int ficha;
+    NodoCola siguiente;
+    
 }

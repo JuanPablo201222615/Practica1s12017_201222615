@@ -8,17 +8,22 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
 import org.jdom2.Document;         // |
 import org.jdom2.Element;          // |\ Librerías
 import org.jdom2.JDOMException;    // |/ JDOM
 import org.jdom2.input.SAXBuilder;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.Text;
 /**
  *
  * @author jp_gm
  */
 public class Menu extends javax.swing.JFrame {
+    
+    ListaSimple_Palabras meterDatos = new ListaSimple_Palabras();
 
     /**
      * Creates new form Menu
@@ -138,6 +143,32 @@ public class Menu extends javax.swing.JFrame {
             System.out.println("Dobles: Valor X y Y : " + eElement.getElementsByTagName("dobles").item(0).getTextContent());
             System.out.println("Triles: Valor X y Y : " + eElement.getElementsByTagName("triples").item(0).getTextContent());
             System.out.println("Diccionario : " + eElement.getElementsByTagName("diccionario").item(0).getTextContent());
+            
+    
+         Node etiquetaHija = (Node)(XPathFactory.newInstance().newXPath().evaluate("/diccionario/palabra", doc, XPathConstants.NODE));  
+if (etiquetaHija!=null){  
+    meterDatos.ingresarNodo(etiquetaHija.getTextContent());
+   System.out.println(etiquetaHija.getTextContent());  
+}  
+           
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(0).getTextContent());
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(1).getTextContent());
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(2).getTextContent());
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(3).getTextContent());
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(4).getTextContent());
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(5).getTextContent());
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(6).getTextContent());
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(7).getTextContent());
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(8).getTextContent());
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(9).getTextContent());
+            meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(10).getTextContent());
+             meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(11).getTextContent());
+
+            
+          
+
+            
+            meterDatos.MostrarLista();
 
         }
     }
