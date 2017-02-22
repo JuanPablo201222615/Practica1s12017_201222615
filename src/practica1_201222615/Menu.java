@@ -162,7 +162,6 @@ if (etiquetaHija!=null){
             meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(8).getTextContent());
             meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(9).getTextContent());
             meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(10).getTextContent());
-             meterDatos.ingresarNodo(eElement.getElementsByTagName("palabra").item(11).getTextContent());
 
             
           
@@ -185,7 +184,7 @@ if (etiquetaHija!=null){
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
         Menu menu = new Menu();
         menu.setVisible(false);
-        Juego frm = new Juego();
+        Usuarios frm = new Usuarios();
        
        frm.setVisible(true);
     }//GEN-LAST:event_btnJugarActionPerformed

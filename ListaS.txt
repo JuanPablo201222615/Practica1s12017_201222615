@@ -3,6 +3,17 @@ rankdir = LR;
 node [shape=record,color=lightblue];     subgraph clusterListaSimple1 {
 label = "LISTA SIMPLE ENLAZADA DE PALABRAS ";
 color=lightgrey;
+"id:hola"
+->"id:mundo"
+->"id:como"
+->"id:estas"
+->"id:uno"
+->"id:dos"
+->"id:tres"
+->"id:universidad"
+->"id:practica"
+->"id:primera"
+->"id:correo"
 ;
 }
 }

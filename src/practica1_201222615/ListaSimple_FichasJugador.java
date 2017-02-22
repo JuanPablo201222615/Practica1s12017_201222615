@@ -67,7 +67,7 @@ public class ListaSimple_FichasJugador {
                 int i=0;
                 //Escribiendo en el fichero
                 //Inicio del archivo
-                Lapicero.println("digraph{");
+                Lapicero.println("subgraph{");
                 Lapicero.println("rankdir = LR;");
                 Lapicero.println("node [shape=record,color=lightblue];     subgraph clusterListaSimple1 {");
                         

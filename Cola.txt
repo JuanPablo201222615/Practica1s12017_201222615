@@ -1,0 +1,9 @@
+digraph{
+rankdir = LR;
+node [shape=record,color=lightblue];     subgraph clusterListaSimple1 {
+label = "COLA DE FICHAS ";
+color=lightgrey;
+"id:5"
+;
+}
+}

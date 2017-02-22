@@ -18,33 +18,71 @@ public class ListaCircular_Usuarios
     NodoListaCircular_Usuarios ultimo;
     NodoListaSimple_FichasJugador union;
    
-    
+     
     
     public ListaCircular_Usuarios()
     {
-     NodoListaCircular_Usuarios circular = new NodoListaCircular_Usuarios();
-    NodoListaSimple_FichasJugador simple = new NodoListaSimple_FichasJugador();
-     circular.union = simple;
+   
      primero = null;
      ultimo = null;
-     union = null;
     }
     
     public void IngresarUsuario (String usuario)
     {
         NodoListaCircular_Usuarios nuevoNodo = new NodoListaCircular_Usuarios();
-        nuevoNodo.usuario = usuario;
+        nuevoNodo.siguiente=null;
+        nuevoNodo.union=null;
+        nuevoNodo.usuario=usuario;
+        
+        
+        
+        ListaSimple_FichasJugador listFichas = new ListaSimple_FichasJugador();
+        listFichas.primero=null;
+        listFichas.ultimo=null;
+   
+        
+        ListaCircular_Usuarios circular = new ListaCircular_Usuarios();
+        circular.primero=null;
+        circular.ultimo=null;
+        circular.union=null;
+        
+        
+       
+    
+     
+     
+        
+        for (int i = 1; i < 8; i++)
+        {
+            NodoListaSimple_FichasJugador nodoFichas=new  NodoListaSimple_FichasJugador();
+            nodoFichas.ficha=i;
+            nodoFichas.siguiente=null;
+          if(listFichas.primero==null)
+          {
+              listFichas.primero=nodoFichas;
+              listFichas.ultimo=nodoFichas;
+          }else
+          {
+              listFichas.ultimo.siguiente=nodoFichas;
+              listFichas.ultimo=nodoFichas;
+          }
+        }
+        
+        nuevoNodo.union=listFichas;
         if (primero == null)
         {
          primero = nuevoNodo;//primer nodo de la lista, primero va a apuntar al nuevoNodo
          ultimo = primero;// ultimo va a ser al nuevoNodo ingresado
          primero.siguiente = ultimo; //se apunta a si mismo
+         
         }else//si la lista ya no es null
         {
         ultimo.siguiente = nuevoNodo;
         nuevoNodo.siguiente = primero;
         ultimo = nuevoNodo;
         }
+        
+        
     }
    public void graficarLista ()
     {
@@ -58,7 +96,11 @@ public class ListaCircular_Usuarios
 }
    
    
-       public int MostrarLista()            {
+       public int MostrarLista()   
+      {
+          String nivel;
+          nivel = " ";
+          
              FileWriter Fichero = null;
             PrintWriter Lapicero = null;
             int conta = 0;
@@ -66,10 +108,9 @@ public class ListaCircular_Usuarios
                 Fichero = new FileWriter("C:\\Users\\jp_gm\\Desktop\\practica1_201222615\\ListaC.txt");
                 Lapicero = new PrintWriter(Fichero);
                NodoListaCircular_Usuarios actual = new NodoListaCircular_Usuarios();
-               NodoListaCircular_Usuarios circular = new NodoListaCircular_Usuarios();
-    NodoListaSimple_FichasJugador simple = new NodoListaSimple_FichasJugador();
-     simple = union;
+               ListaSimple_FichasJugador simple = new ListaSimple_FichasJugador();
                actual = primero;
+           
             
                 Lapicero.println("digraph{");
                 Lapicero.println("rankdir = LR;");
@@ -78,27 +119,44 @@ public class ListaCircular_Usuarios
                 Lapicero.println("label = \"LISTA CIRCULAR DE USUARIOS \";");
                 Lapicero.println("color=lightgrey;");     
                     
-                
+                    
                 
                 do{
-        Lapicero.println(actual.usuario); 
-         Lapicero.println("->"+ actual.siguiente.usuario); 
-        Lapicero.println("->"+ actual.siguiente.union); 
-        Lapicero.println("->"+ simple.siguiente.ficha); 
+        Lapicero.println("node"+actual.usuario+"[label = \" " + actual.usuario + "\"];\n"); 
+        nivel = nivel +" node"+  actual.usuario;
+        if(actual.union != null)
+        {
+            
+           NodoListaSimple_FichasJugador aux = actual.union.primero;
+             while(aux!=null)
+            {       
+                Lapicero.println("node"+actual.usuario+ aux.ficha + "[label = \" " + aux.ficha + "\"];\n");             
+                if(aux.siguiente!=null)
+                {
+                    Lapicero.println("node"+actual.usuario+aux.siguiente.ficha +"[label = \" " + aux.siguiente.ficha + "\"];\n");
+                    Lapicero.println("node"+actual.usuario + aux.ficha+"->"+"node"+actual.usuario+aux.siguiente.ficha+";\n");
+                }
+                aux=aux.siguiente;
+            }    
+            Lapicero.println("node"+actual.usuario+ "->"+ "node"+ actual.usuario+actual.union.primero.ficha); 
+        }
+        Lapicero.println("node"+actual.siguiente.usuario+"[label = \" " + actual.siguiente.usuario + "\"];\n");
+         Lapicero.println("node"+actual.usuario+ "->"+ "node" +actual.siguiente.usuario); 
         
         
         actual = actual.siguiente;
-    
         }
+           
           while(actual != primero);
-                    
+          Lapicero.println("{rank = same" + nivel + "} \n");         
                     
     
-        
+              
               Lapicero.println(";"); 
                 //Pie del Archivo
                 Lapicero.println("}");
-                Lapicero.println("}");  
+                Lapicero.println("}");
+                
             }catch(Exception e){
                 return 2;  //Significa que hubo un error al escribir el archivo
             }finally{

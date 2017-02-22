@@ -12,5 +12,5 @@ package practica1_201222615;
 public class NodoListaCircular_Usuarios {
    String usuario;
    NodoListaCircular_Usuarios siguiente;
-   NodoListaSimple_FichasJugador union;
+   ListaSimple_FichasJugador union;
 }

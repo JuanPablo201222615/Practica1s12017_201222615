@@ -1,0 +1,54 @@
+digraph{
+rankdir = LR;
+node [shape=record,color=lightblue];     subgraph clusterListaCircular1 {
+label = "LISTA CIRCULAR DE USUARIOS ";
+color=lightgrey;
+nodelocura[label = " locura"];
+
+nodelocura1[label = " 1"];
+
+nodelocura2[label = " 2"];
+
+nodelocura1->nodelocura2;
+
+nodelocura2[label = " 2"];
+
+nodelocura3[label = " 3"];
+
+nodelocura2->nodelocura3;
+
+nodelocura3[label = " 3"];
+
+nodelocura4[label = " 4"];
+
+nodelocura3->nodelocura4;
+
+nodelocura4[label = " 4"];
+
+nodelocura5[label = " 5"];
+
+nodelocura4->nodelocura5;
+
+nodelocura5[label = " 5"];
+
+nodelocura6[label = " 6"];
+
+nodelocura5->nodelocura6;
+
+nodelocura6[label = " 6"];
+
+nodelocura7[label = " 7"];
+
+nodelocura6->nodelocura7;
+
+nodelocura7[label = " 7"];
+
+nodelocura->nodelocura1
+nodelocura[label = " locura"];
+
+nodelocura->nodelocura
+{rank = same  nodelocura} 
+
+;
+}
+}

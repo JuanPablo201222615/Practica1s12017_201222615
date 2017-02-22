@@ -1,5 +1,7 @@
 package practica1_201222615;
 
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,6 +19,12 @@ public class Reporte extends javax.swing.JFrame {
      */
     public Reporte() {
         initComponents();
+cmbCargarImagen.addItem("SELECCIONE");
+cmbCargarImagen.addItem("Cola");
+cmbCargarImagen.addItem("Lista Circular");
+cmbCargarImagen.addItem("Lista Simple de Fichas");
+cmbCargarImagen.addItem("Lista Simple de Palabras");
+cmbCargarImagen.addItem("Matriz");
     }
 
     /**
@@ -28,21 +36,62 @@ public class Reporte extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblImagen = new javax.swing.JLabel();
+        cmbCargarImagen = new javax.swing.JComboBox();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblImagen.setBorder(new javax.swing.border.MatteBorder(null));
+
+        cmbCargarImagen.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbCargarImagenItemStateChanged(evt);
+            }
+        });
+        cmbCargarImagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCargarImagenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbCargarImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 1353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(cmbCargarImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmbCargarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCargarImagenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbCargarImagenActionPerformed
+
+    private void cmbCargarImagenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbCargarImagenItemStateChanged
+       int selectedIndex = cmbCargarImagen.getSelectedIndex();
+switch (selectedIndex) {
+case 1: this.lblImagen.setIcon(new ImageIcon("C:\\Users\\jp_gm\\Desktop\\practica1_201222615\\Cola.jpg"));break;
+case 2: this.lblImagen.setIcon(new ImageIcon("C:\\Users\\jp_gm\\Desktop\\practica1_201222615\\ListaC.jpg"));break;
+case 3: this.lblImagen.setIcon(new ImageIcon("C:\\Users\\jp_gm\\Desktop\\practica1_201222615\\ListaSF.jpg"));break;
+case 4: this.lblImagen.setIcon(new ImageIcon("C:\\Users\\jp_gm\\Desktop\\practica1_201222615\\ListaS.jpg"));break;
+case 5: this.lblImagen.setIcon(new ImageIcon("C:\\Users\\jp_gm\\Desktop\\practica1_201222615\\Matriz.jpg"));break;
+}
+    }//GEN-LAST:event_cmbCargarImagenItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -80,5 +129,7 @@ public class Reporte extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox cmbCargarImagen;
+    private javax.swing.JLabel lblImagen;
     // End of variables declaration//GEN-END:variables
 }
